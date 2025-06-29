@@ -150,7 +150,7 @@ func ExtractTableDataSince(ctx context.Context, conn *pgx.Conn, table, deltaCol,
 		results = append(results, values)
 	}
 	if err := rows.Err(); err != nil {
-		return nil, fmt.Errorf("failed to get rows: %w", err)
+		return nil, fmt.Errorf("error iterating delta rows: %w", err)
 	}
 
 	return &TableData{
@@ -160,7 +160,7 @@ func ExtractTableDataSince(ctx context.Context, conn *pgx.Conn, table, deltaCol,
 
 }
 
-func getColumnNames(cols []Column) []string {
+func GetColumnNames(cols []Column) []string {
 	names := make([]string, len(cols))
 	for i, col := range cols {
 		names[i] = col.Name

@@ -45,7 +45,7 @@ func (m *AppModel) Init() tea.Cmd {
 	return m.Spinner.Tick
 }
 
-func (m *AppModel) Update(msg tea.Msg) (*AppModel, tea.Cmd) {
+func (m *AppModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		switch msg.String() {

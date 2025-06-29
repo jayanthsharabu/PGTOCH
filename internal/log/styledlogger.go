@@ -62,6 +62,6 @@ func (s *StyledLogger) getZapLogger() *zap.Logger {
 
 var StyledLog *StyledLogger
 
-func initStyledLogger() {
+func InitStyledLogger() {
 	StyledLog = NewStyledLogger()
 }

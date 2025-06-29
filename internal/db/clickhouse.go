@@ -8,7 +8,7 @@ import (
 	"github.com/ClickHouse/clickhouse-go/v2"
 )
 
-func connectClickhouse(chURL string) (*sql.DB, error) {
+func ConnectClickhouse(chURL string) (*sql.DB, error) {
 	var addr string
 
 	var username, password, database string
